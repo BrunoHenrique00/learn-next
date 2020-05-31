@@ -17,15 +17,21 @@ export default function Home() {
         </p>
 
         <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
+          <div className="card">
             <h3>Advogado &rarr;</h3>
             <p>Entre na plataforma e administre seus processos!</p>
-          </a>
+            <input placeholder="Email"/>
+            <input placeholder="Senha"/>
+            <button>Entrar!</button>
+          </div>
 
-          <a href="https://nextjs.org/learn" className="card">
+          <div className="card">
             <h3>Cliente &rarr;</h3>
             <p>Entre na plataforma e veja seus processos!</p>
-          </a>
+            <input placeholder="CPF"/>
+            <input placeholder="Senha"/>
+            <button>Entrar!</button>
+          </div>
 
         </div>
       </main>
@@ -61,26 +67,17 @@ export default function Home() {
           align-items: center;
         }
 
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        input{
+          display: block;
+          border: 1px solid #eaeaea;
+          border-radius: 10px;
+          margin: 1rem;
+          padding: 1rem;
         }
 
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
+        button{
+          border: 1px solid #eaeaea;
+          border-radius: 5px;
         }
 
         .title {
@@ -109,7 +106,7 @@ export default function Home() {
           margin-top: 3rem;
         }
 
-        .card {
+        .card{
           margin: 1rem;
           flex-basis: 45%;
           padding: 1.5rem;
