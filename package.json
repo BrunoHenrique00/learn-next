@@ -8,7 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.1",
     "next": "9.4.4",
     "pg": "^8.2.1",
