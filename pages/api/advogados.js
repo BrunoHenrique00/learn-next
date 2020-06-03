@@ -1,9 +1,11 @@
 import knex from '../../src/database'
 import {hash} from 'bcrypt'
+import { authentication } from '../../src/api_functions/authentication'
 
 export default async (req, res) => {
-  if(req.method === 'GET'){
-    // Send all users  
+  if(req.method === 'GET'){ 
+    authentication(req,res)
+    // Get all users
     const db = await knex.select('id','email','password').from('advogados')
     res.send(db)
   }

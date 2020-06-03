@@ -12,7 +12,7 @@ export default async (req, res) => {
         compare(password, user.password, (err, result) => {
             if( !err && result){
                 const claims = {id: user.id, myEmail: user.email}
-                const jwt = sign(claims,'20c523ca-733d-4386-8691-33bdb3252636')
+                const jwt = sign(claims,'20c523ca-733d-4386-8691-33bdb3252636',{expiresIn: '1h'})
                 res.json({message: 'Logado com sucesso!', authToken: jwt})
             }else{
                 res.json({error: 'Informacoes erradas'})
