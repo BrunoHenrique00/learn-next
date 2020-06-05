@@ -1,10 +1,15 @@
 import Head from 'next/head'
 import { useRef } from 'react';
+import fetch from 'isomorphic-fetch';
+import { useRouter } from 'next/router'
 
 export default function Home() {
+  const router = useRouter()
 
   const emailAdvogado = useRef(null)
   const passwordAdvogado = useRef(null)
+  const cpfClient = useRef(null)
+  const passwordClient = useRef(null)
 
   function getAdvogadoInputs(){
     return {
@@ -14,20 +19,23 @@ export default function Home() {
   }
   function getAClientInputs(){
     return {
-      email: emailAdvogado.current.value,
-      password: passwordAdvogado.current.value
+      email: cpfClient.current.value,
+      password: passwordClient.current.value
     }
   }
 
   async function sendAPI(){
     const userData = getAdvogadoInputs()
-    fetch('http://localhost:3000/api/advogados/login',{
+    const res = await fetch('http://localhost:3000/api/advogados/login',{
       method: 'POST',
       headers: {
         'Content-Type':'application/json'
       },
       body: JSON.stringify(userData)
-    }).then((data) => console.log('Enviado com sucesso!', data ))
+    })
+    const json = await res.json()
+    console.log(json)
+    router.push('/advogado')
   }
 
   return (
@@ -57,9 +65,9 @@ export default function Home() {
           <div className="card">
             <h3>Cliente &rarr;</h3>
             <p>Entre na plataforma e veja seus processos!</p>
-            <input placeholder="CPF"/>
-            <input placeholder="Senha"/>
-            <button>Entrar!</button>
+            <input ref={cpfClient} placeholder="CPF"/>
+            <input ref={passwordClient} placeholder="Senha"/>
+            <button >Entrar!</button>
           </div>
 
         </div>

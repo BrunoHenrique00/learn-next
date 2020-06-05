@@ -20,10 +20,11 @@ export default async (req, res) => {
                   sameSite: true,
                   path: '/'
                 }))
-                res.json({message: 'Logado com sucesso!'})
+                res.json({message: 'Logado com sucesso!', email: email})
                 return res.status(200).end()
             }else{
                 res.json({error: 'Informacoes erradas'})
+                res.end()
             }
         })
 
