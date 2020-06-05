@@ -1,30 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Projeto para testar novas features do Next.js
 
-## Getting Started
+## API built-in do Next...
 
-First, run the development server:
+[Sobre a api](https://nextjs.org/docs/api-routes/introduction)
 
-```bash
-npm run dev
-# or
-yarn dev
+Bom, meu objetivo era tentar usar a api que o Next disponibiliza, para poder montar o back-end, claro que isso vai ficar acoplado junto com o front-end, então não acho a melhor prática, até porque se fosse algo que precisaria ser escalável, teria uma séria de limitações.
+
+Para acessar toda a parte da api em sí, está dentro da pasta...
+
+```javascript
+    pages/api
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Experiência
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Para desenvolver é como se estivesse fazendo um servidor em express. Para coisas básicas é tranquilo ir desenvolvendo, mas se for algo complexo, além das limitações será gasto mais tempo tentando implementar de um modo que esteja dentro dos padroes do Next, ou seja dor de cabeça. Sem contar que para achar um solução específica pro seu problema será mais dificil devido ao "pouco conteudo sobre".
 
-## Learn More
+## Minha conclusão 
 
-To learn more about Next.js, take a look at the following resources:
+Já usei o Next para fazer meu blog, então foi uma mão na roda pra mim. Gosto bastante dele, para o front-end eu acho que ele é melhor framework pra se usar (React), apesar de ter o Gastby também. Portanto, é melhor fazer projetos bem desacoplados, front-end de um lado e back-end do outro, para poder ter mais liberdade e flexibilidade na hora de codar.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### OBS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Se você não está familiarizado com SSG (Static Site Generation),SSR (Server Side Rendering) e essas coisas, é bom dar uma olhada para poder entender o propósito do Next.js e algumas de suas ferramentas. 👨‍💻👨‍💻👨‍💻
