@@ -1,6 +1,35 @@
 import Head from 'next/head'
+import { useRef } from 'react';
 
 export default function Home() {
+
+  const emailAdvogado = useRef(null)
+  const passwordAdvogado = useRef(null)
+
+  function getAdvogadoInputs(){
+    return {
+      email: emailAdvogado.current.value,
+      password: passwordAdvogado.current.value
+    }
+  }
+  function getAClientInputs(){
+    return {
+      email: emailAdvogado.current.value,
+      password: passwordAdvogado.current.value
+    }
+  }
+
+  async function sendAPI(){
+    const userData = getAdvogadoInputs()
+    fetch('http://localhost:3000/api/advogados/login',{
+      method: 'POST',
+      headers: {
+        'Content-Type':'application/json'
+      },
+      body: JSON.stringify(userData)
+    }).then((data) => console.log('Enviado com sucesso!', data ))
+  }
+
   return (
     <div className="container">
       <Head>
@@ -20,9 +49,9 @@ export default function Home() {
           <div className="card">
             <h3>Advogado &rarr;</h3>
             <p>Entre na plataforma e administre seus processos!</p>
-            <input placeholder="Email"/>
-            <input placeholder="Senha"/>
-            <button>Entrar!</button>
+            <input ref={emailAdvogado} placeholder="Email"/>
+            <input ref={passwordAdvogado} placeholder="Senha"/>
+            <button onClick={sendAPI}>Entrar!</button>
           </div>
 
           <div className="card">
